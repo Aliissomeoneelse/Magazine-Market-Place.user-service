@@ -23,18 +23,18 @@ public class UserService {
     private final UserMapper userMapper;
     private final UserRepository userRepository;
     private final UserRepositoryImpl userRepositoryImpl;
-    private final UserValidation userValidation;
+//    private final UserValidation userValidation;
 
     public ResponseDto<UserDto> create(UserDto dto) {
-        List<ErrorDto> errors = userValidation.validate(dto);
-        if (!errors.isEmpty()) {
-            return ResponseDto.<UserDto>builder()
-                    .message("Validation error")
-                    .data(dto)
-                    .errors(errors)
-                    .code(-2)
-                    .build();
-        }
+//        List<ErrorDto> errors = userValidation.validate(dto);
+//        if (!errors.isEmpty()) {
+//            return ResponseDto.<UserDto>builder()
+//                    .message("Validation error")
+//                    .data(dto)
+//                    .errors(errors)
+//                    .code(-2)
+//                    .build();
+//        }
         try {
             User user = userMapper.toEntity(dto);
             user.setCreatedAt(LocalDateTime.now());

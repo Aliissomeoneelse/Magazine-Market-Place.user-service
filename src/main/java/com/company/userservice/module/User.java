@@ -41,12 +41,6 @@ public class User {
     @Column(name = "employees_id")
     private Integer employeesId;
 
-    @Column(name="image_id")
-    private Integer imageId;
-
-    @Column(name = "loaner_id")
-    private Integer loanerId;
-
     private LocalDateTime birthdate;
     @Column(name = "working_time_start")
     private LocalTime workingTimeStart;

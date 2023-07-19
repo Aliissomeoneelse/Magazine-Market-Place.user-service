@@ -1,6 +1,7 @@
 package com.company.userservice.dto;
 
 import com.company.userservice.client.dto.ImageDto;
+import com.company.userservice.client.dto.LoanerDto;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 import jakarta.validation.constraints.NotBlank;
@@ -35,10 +36,9 @@ public class UserDto {
 
     private Integer employeesId;
 
-    private Integer imageId;
     private Set<ImageDto> images;
 
-    private Integer loanerId;
+    private Set<LoanerDto> loaners;
 
     private LocalDateTime birthdate;
     private LocalTime workingTimeStart;
