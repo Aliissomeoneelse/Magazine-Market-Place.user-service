@@ -1,5 +1,6 @@
 package com.company.userservice.dto;
 
+import com.company.userservice.client.dto.ImageDto;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 import jakarta.validation.constraints.NotBlank;
@@ -9,6 +10,7 @@ import lombok.Setter;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -32,6 +34,11 @@ public class UserDto {
     private Double monthlyPrice;
 
     private Integer employeesId;
+
+    private Integer imageId;
+    private Set<ImageDto> images;
+
+    private Integer loanerId;
 
     private LocalDateTime birthdate;
     private LocalTime workingTimeStart;
