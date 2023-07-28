@@ -10,10 +10,6 @@ spring:
   config:
     import: optional:configserver:http://localhost:8888/
 
-server:
-  servlet:
-    context-path: /user-service
-
 eureka:
   client:
     serviceUrl:
