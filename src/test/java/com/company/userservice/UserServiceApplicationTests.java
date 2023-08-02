@@ -219,6 +219,22 @@ class UserServiceApplicationTests {
 
 	}
 
+	@Test
+	void testDeleteMethodNegative() {
+
+		Integer id = 1;
+		Mockito.when(this.userRepository.findByIdAndDeletedAtIsNull(id))
+				.thenReturn(Optional.empty());
+
+		ResponseDto<UserDto> response = this.userService.delete(id);
+
+		Assertions.assertFalse(response.isSuccess());
+		Assertions.assertNull(response.getData());
+		Assertions.assertEquals(-1, response.getCode());
+
+		Mockito.verify(this.userRepository, Mockito.times(1)).findByIdAndDeletedAtIsNull(Mockito.any());;
+	}
+
 
 
 }
