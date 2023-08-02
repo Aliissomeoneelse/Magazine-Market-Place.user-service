@@ -5,8 +5,7 @@ import com.company.userservice.client.dto.LoanerDto;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 import jakarta.validation.constraints.NotBlank;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -15,6 +14,9 @@ import java.util.Set;
 
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class UserDto {
     private Integer id;
@@ -36,9 +38,9 @@ public class UserDto {
 
     private Integer employeesId;
 
-    private Set<ImageDto> images;
-
-    private Set<LoanerDto> loaners;
+//    private Set<ImageDto> images;
+//
+//    private Set<LoanerDto> loaners;
 
     private LocalDateTime birthdate;
     private LocalTime workingTimeStart;

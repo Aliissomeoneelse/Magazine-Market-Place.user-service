@@ -37,7 +37,6 @@ public class UserService {
 //        }
         try {
             User user = userMapper.toEntity(dto);
-            user.setCreatedAt(LocalDateTime.now());
             userRepository.save(user);
             return ResponseDto.<UserDto>builder()
                     .success(true)
@@ -47,7 +46,7 @@ public class UserService {
         } catch (Exception e) {
             return ResponseDto.<UserDto>builder()
                     .message("User while saving error :: " + e.getMessage())
-                    .code(-1)
+                    .code(-3)
                     .build();
         }
     }
@@ -104,7 +103,6 @@ public class UserService {
         try {
             User user = userMapper.updateUsersFromDto(dto, optional.get());
             user.setId(optional.get().getId());
-            user.setUpdatedAt(LocalDateTime.now());
             userRepository.save(user);
             return ResponseDto.<UserDto>builder()
                     .success(true)

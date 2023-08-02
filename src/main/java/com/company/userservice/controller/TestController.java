@@ -22,7 +22,7 @@ public class TestController {
 
     @GetMapping(value = "/get")
     public TestResponse getValue(){
-        log.info(String.format("User-service port :: %%s",serverPort));
+        log.info(String.format("User-service port :: %s",serverPort));
         return new TestResponse(environment.getProperty("server.port",Integer.class));
     }
 

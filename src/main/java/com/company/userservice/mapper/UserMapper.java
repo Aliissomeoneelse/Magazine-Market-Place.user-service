@@ -25,8 +25,8 @@ public abstract class UserMapper {
     @Mapping(target = "deletedAt", ignore = true)
     public abstract User toEntity(UserDto dto);
 
-    @Mapping(target = "images", expression = "java(imageClient.getImagesByUsersId(user.getId()).getData())")
-    @Mapping(target = "loaners", expression = "java(loanerClient.getLoanersByUserId(user.getId()).getData())")
+//    @Mapping(target = "images", expression = "java(imageClient.getImagesByUsersId(user.getId()).getData())")
+//    @Mapping(target = "loaners", expression = "java(loanerClient.getLoanersByUserId(user.getId()).getData())")
     public abstract UserDto toDto(User user);
 
     @Mapping(target = "id", ignore = true)
